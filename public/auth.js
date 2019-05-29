@@ -1,12 +1,12 @@
-const endpoint = "https://dkj6kit9eb.execute-api.us-east-2.amazonaws.com";
+const endpoint = "your_endpoint";
 
-const region = "us-east-2";
-const userPoolId = "us-east-2_oYyBgwLfv";
-const clientId = "6b97fkj684sp4p3a6ntos5gksn";
-const identityPoolId = "us-east-2:ca810ad7-81eb-4c86-902a-59e20d2ece8f";
+const region = "api_region";
+const userPoolId = "user_pool_id";
+const clientId = "client_id";
+const identityPoolId = "identity_pool_id";
 
-const username = "ctiszav@gmail.com";
-const password = "Passw0rd!";
+const username = "your_username";
+const password = "your_password";
 
 var cognitoUser;
 
@@ -288,14 +288,14 @@ function invokeApiAjax(path, method, headers, queryParams, body) {
           body
         });
 
-	  headers = signedRequest.headers;
+      headers = signedRequest.headers;
       $.ajax({
         url: signedRequest.url,
         crossDomain: true,
-		contentType: "application/json",
+        contentType: "application/json",
         type: method,
         headers,
-		data: JSON.stringify(body),
+        data: JSON.stringify(body),
         success: function(data, textStatus, jqXHR) {
           console.log(data);
         },
